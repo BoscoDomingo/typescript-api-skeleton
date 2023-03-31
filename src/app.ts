@@ -1,12 +1,12 @@
 import express from "express";
 import path from "path";
 
+import dotenv from 'dotenv';
 import { loadApiEndpoints } from "./controllers/api";
 
-// Create Express server
+dotenv.config();
 const app = express();
 
-// Express configuration
 app.set("port", process.env.PORT ?? 3000);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

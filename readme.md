@@ -4,13 +4,14 @@ This is a repository intended to serve as a starting point if you want to bootst
 
 ## Features
 
-- [TypeScript](https://www.typescriptlang.org/) (v4)
+- [TypeScript](https://www.typescriptlang.org/) (v5)
 - [ts-node-dev](https://github.com/wclr/ts-node-dev)
 - [Prettier](https://prettier.io/)
 - [ESLint](https://eslint.org/) with:
-  - [Codely's config](https://github.com/lydell/eslint-plugin-simple-import-sort/) (includes ESLint's recommended rules, Prettier, Import plugin and more)
   - [Jest plugin](https://www.npmjs.com/package/eslint-plugin-jest)
-- [Jest](https://jestjs.io) with [DOM Testing Library](https://testing-library.com/docs/dom-testing-library/intro)
+  - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) to make Prettier and ESLint play nice together.
+- [Jest](https://jestjs.io) (can be substituted with [`tap`](https://www.npmjs.com/package/tap))
+  - Accompanied by [Supertest](https://www.npmjs.com/package/supertest) to test API calls. Not needed if you do proper DI with something like [NestJS](https://nestjs.com/).
 - [GitHub Action workflows](https://github.com/features/actions) set up to run tests and linting on push
 
 ## Running the app
