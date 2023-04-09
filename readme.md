@@ -5,7 +5,11 @@ This is a repository intended to serve as a starting point if you want to bootst
 ## Features
 
 - [TypeScript](https://www.typescriptlang.org/) (v5)
+  - Find other `tsconfig.json` options [here](https://github.com/tsconfig/bases#centralized-recommendations-for-tsconfig-bases)
 - [ts-node-dev](https://github.com/wclr/ts-node-dev)
+- [Pure DI](https://blog.ploeh.dk/2014/06/10/pure-di/)
+  - If you prefer using containers, check out [tsyringe](https://github.com/microsoft/tsyringe), [typescript-ioc](https://www.npmjs.com/package/typescript-ioc), [TypeDI](https://github.com/typestack/typedi), [NestJS](https://nestjs.com/), [InversifyJS](https://inversify.io/) or [Awilix](https://github.com/jeffijoe/awilix)
+  - If you prefer mocking dependencies (no DI) use [proxyquire](https://www.npmjs.com/package/proxyquire)
 - [Prettier](https://prettier.io/)
 - [ESLint](https://eslint.org/) with:
   - [Jest plugin](https://www.npmjs.com/package/eslint-plugin-jest)
