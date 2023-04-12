@@ -1,6 +1,6 @@
 {
   "name": "typescript-api-skeleton",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple TypeScript skeleton for easy tasks. For anything more complex, a DDD structure is recommended.",
   "main": "server.ts",
   "scripts": {
@@ -9,6 +9,9 @@
     "build": "tsc -p tsconfig.build.json",
     "lint": "eslint --ignore-path .gitignore . --ext .ts",
     "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src test --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
     "test": "jest --verbose"
   },
   "repository": {
@@ -35,10 +38,11 @@
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.11",
     "@types/supertest": "^2.0.12",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",
     "prettier": "2.8.7",
     "supertest": "^6.3.3",
