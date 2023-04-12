@@ -5,7 +5,10 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
   ],
   overrides: [
@@ -26,8 +29,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: true,
+    tsconfigRootDir: __dirname,
   },
-  plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-module-boundary-types': [
@@ -37,7 +41,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-inferrable-types': 'warn',
-    '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
+    '@typescript-eslint/array-type': ['warn', { default: 'array' }],
     '@typescript-eslint/consistent-generic-constructors': 'error',
     '@typescript-eslint/member-ordering': [
       'warn',
@@ -194,7 +198,7 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-condition': 'warn',
     '@typescript-eslint/no-extra-non-null-assertion': 'warn',
     '@typescript-eslint/no-unsafe-declaration-merging': 'error',
-    '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
+    // '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
     '@typescript-eslint/no-useless-empty-export': 'error',
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
     '@typescript-eslint/prefer-for-of': 'warn',
@@ -203,12 +207,14 @@ module.exports = {
     '@typescript-eslint/prefer-literal-enum-member': 'warn',
     '@typescript-eslint/prefer-nullish-coalescing': 'error',
     '@typescript-eslint/prefer-optional-chain': 'warn',
-    '@typescript-eslint/prefer-readonly': 'error',
+    '@typescript-eslint/prefer-readonly': 'warn',
     '@typescript-eslint/prefer-string-starts-ends-with': 'error',
     '@typescript-eslint/promise-function-async': 'error',
     '@typescript-eslint/unified-signatures': 'error',
     '@typescript-eslint/sort-type-constituents': 'error',
     '@typescript-eslint/switch-exhaustiveness-check': 'warn',
+    '@typescript-eslint/no-unsafe-assignment': 'warn',
+    '@typescript-eslint/restrict-template-expressions': 'warn',
     'no-console': 'warn',
     'default-param-last': 'off',
     '@typescript-eslint/default-param-last': 'warn',
@@ -217,10 +223,8 @@ module.exports = {
     'no-await-in-loop': 'warn',
     'no-constructor-return': 'error',
     'import/order': [
-      1,
-      {
-        alphabetize: { order: 'asc' },
-      },
+      'warn',
+      { 'newlines-between': 'always', alphabetize: { order: 'asc' } },
     ],
     'import/newline-after-import': ['error', { count: 1 }],
   },
