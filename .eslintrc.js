@@ -220,6 +220,8 @@ module.exports = {
     '@typescript-eslint/default-param-last': 'warn',
     'dot-notation': 'off',
     '@typescript-eslint/dot-notation': 'error',
+    "lines-between-class-members": "off",
+    "@typescript-eslint/lines-between-class-members": "warn", // No support from Prettier for this https://github.com/prettier/prettier/issues/1603
     'no-await-in-loop': 'warn',
     'no-constructor-return': 'error',
     'import/order': [
