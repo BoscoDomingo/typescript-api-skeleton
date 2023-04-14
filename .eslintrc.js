@@ -198,6 +198,7 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-condition': 'warn',
     '@typescript-eslint/no-extra-non-null-assertion': 'warn',
     '@typescript-eslint/no-unsafe-declaration-merging': 'error',
+    '@typescript-eslint/no-unsafe-argument': 'warn',
     // '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
     '@typescript-eslint/no-useless-empty-export': 'error',
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
