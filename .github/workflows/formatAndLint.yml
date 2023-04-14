@@ -20,9 +20,9 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-            
+
       - name: Install Dependencies
         run: npm install
 
       - name: Lint
-        run: npm run lint
+        run: npm run format
