@@ -1,7 +1,7 @@
 import path from 'path';
 
 import dotenv from 'dotenv';
-import express, { Errback, ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 
 import sampleData from '../data/sample.json';
 
@@ -21,9 +21,10 @@ app.use(
 );
 
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-  console.error(err.stack)
-  res.status(500).send('Something broke!')
-})
+  // eslint-disable-next-line no-console
+  console.error(err.stack);
+  res.status(500).json({ ERROR: 'Internal server error.' });
+});
 
 // DI (Composition Root)
 const baseService = new BaseService(sampleData);
