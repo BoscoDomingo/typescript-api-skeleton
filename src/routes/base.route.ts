@@ -1,4 +1,4 @@
-import { json, NextFunction, Request, Response, Router } from 'express';
+import { json, Router } from 'express';
 
 import BaseController from '../controllers/base.controller';
 import { checkJSON } from '../utils/middleware';
@@ -15,16 +15,13 @@ export default class BaseRouter {
   }
 
   private configureRoutes(): void {
-    this.router.get(
-      '/',
-      this.sampleController.getSampleData.bind(this.sampleController),
-    );
-    // this.router.post('/',json );
-    this.router.post(
-      '/',
-      checkJSON,
-      json(),
-      this.sampleController.postReceivedData.bind(this.sampleController),
-    );
+    this.router
+      .route('/')
+      .get(this.sampleController.getSampleData.bind(this.sampleController))
+      .post(
+        checkJSON,
+        json(),
+        this.sampleController.postReceivedData.bind(this.sampleController),
+      );
   }
 }
