@@ -13,7 +13,7 @@
     "prettier": "npx prettier src test --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
-    "test": "jest --verbose"
+    "test": "jest --verbose --detectOpenHandles"
   },
   "repository": {
     "type": "git",
