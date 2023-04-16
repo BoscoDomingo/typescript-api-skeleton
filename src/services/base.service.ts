@@ -6,6 +6,10 @@ export default class BaseService {
   ) {}
 
   getSampleData(): { list: { id: string; name: string }[] } {
-    return this.sampleData;
+    try {
+      return this.sampleData;
+    } catch (error) {
+      throw new Error('Unable to retrieve data');
+    }
   }
 }
