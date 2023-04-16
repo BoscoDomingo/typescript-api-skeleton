@@ -21,7 +21,7 @@ module.exports = {
     {
       files: ['test/**'],
       plugins: ['jest'],
-      extends: ['plugin:jest/recommended'],
+      extends: ['plugin:jest/recommended', 'prettier'],
       rules: { 'jest/prefer-expect-assertions': 'off' },
     },
   ],
@@ -39,7 +39,7 @@ module.exports = {
       { allowArgumentsExplicitlyTypedAsAny: true },
     ],
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-inferrable-types': 'warn',
     '@typescript-eslint/array-type': ['warn', { default: 'array' }],
     '@typescript-eslint/consistent-generic-constructors': 'error',
@@ -199,6 +199,7 @@ module.exports = {
     '@typescript-eslint/no-extra-non-null-assertion': 'warn',
     '@typescript-eslint/no-unsafe-declaration-merging': 'error',
     '@typescript-eslint/no-unsafe-argument': 'warn',
+    '@typescript-eslint/no-unsafe-call': 'warn',
     // '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
     '@typescript-eslint/no-useless-empty-export': 'error',
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
@@ -221,8 +222,8 @@ module.exports = {
     '@typescript-eslint/default-param-last': 'warn',
     'dot-notation': 'off',
     '@typescript-eslint/dot-notation': 'error',
-    "lines-between-class-members": "off",
-    "@typescript-eslint/lines-between-class-members": "warn", // No support from Prettier for this https://github.com/prettier/prettier/issues/1603
+    'lines-between-class-members': 'off',
+    '@typescript-eslint/lines-between-class-members': 'warn', // No support from Prettier for this https://github.com/prettier/prettier/issues/1603
     'no-await-in-loop': 'warn',
     'no-constructor-return': 'error',
     'import/order': [
