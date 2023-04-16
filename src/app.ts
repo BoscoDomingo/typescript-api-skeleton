@@ -20,17 +20,28 @@ app.use(
   express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 }),
 );
 
-app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-  // eslint-disable-next-line no-console
-  console.error(err.stack);
-  res.status(500).json({ ERROR: 'Internal server error.' });
-});
-
 // DI (Composition Root)
 const baseService = new BaseService(sampleData);
 const baseController = new BaseController(baseService);
 const baseRouter = new BaseRouter(baseController);
 
 app.use('/', baseRouter.configureRouter());
+
+app.use((err: Error, req: Request, res: Response, _next: NextFunction) => {
+  // eslint-disable-next-line no-console
+  console.error(`Error in request: ${req.method} - ${req.url}\n`, err.stack);
+  const returnedErrorMessage = {
+    message:
+      process.env.NODE_ENV === 'production'
+        ? 'Internal server error'
+        : err.message,
+  };
+
+  if (err instanceof SyntaxError) {
+    res.status(400).json(returnedErrorMessage);
+    return
+  }
+  res.status(500).json(returnedErrorMessage);
+});
 
 export default app;
