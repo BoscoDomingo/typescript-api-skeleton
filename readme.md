@@ -7,7 +7,7 @@ This repository is intended to serve as a starting point if you want to bootstra
   - No [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) structuring (I strongly suggest a DDD approach)
     - Coupling of infrastructure and application layers unless you separate them yourself
 
-If these issues don't matter for your intended use, or you know how to fix them, this will be a fast way to have an API running. If you're looking for a more scalable strategy, check my TS DDD template (coming soon™)
+If these issues don't matter for your intended use, or you know how to fix them, this will be a fast way to have an API running. If you're looking for a more scalable strategy, check my TS DDD template (coming soon™) or if you're looking for a simple, plain Node.js app look at my [TypeScript Node.js Template](https://github.com/BoscoDomingo/typescript-skeleton)
 
 ## Features
 
