@@ -1,16 +1,16 @@
 {
   "name": "typescript-api-skeleton",
-  "version": "1.1.0",
+  "version": "2.0.2",
   "description": "A simple TypeScript skeleton for easy tasks. For anything more complex, a DDD structure is recommended.",
-  "main": "server.ts",
+  "main": "src/server.ts",
   "scripts": {
     "start": "node ./dist/src/server.js",
     "dev": "ts-node-dev --rs --transpile-only ./src/server.ts",
     "dev:debug": "ts-node-dev --inspect --rs --transpile-only ./src/server.ts",
     "build": "tsc -p tsconfig.build.json",
-    "lint": "eslint --ignore-path .gitignore . --ext .ts",
+    "lint": "eslint --ignore-path .gitignore . --ext .ts --no-error-on-unmatched-pattern",
     "lint:fix": "npm run lint -- --fix",
-    "prettier": "npx prettier src test --check",
+    "prettier": "npx prettier src test --check --no-error-on-unmatched-pattern",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
     "test": "jest --verbose --detectOpenHandles"
