@@ -248,6 +248,8 @@ module.exports = {
           'unknown',
         ],
       },
+    ],
+    'import/order': [
       'warn',
       {
         'newlines-between': 'always',
