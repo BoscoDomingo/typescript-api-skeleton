@@ -29,13 +29,14 @@ If these issues don't matter for your intended use, or you know how to fix them,
 
 ## Local dev
 
-| Action               | Command             | Description                                      |
-| -------------------- | ------------------- | ------------------------------------------------ |
-| Install dependencies | `npm i`             | Installs the necessary dependencies              |
-| Compile              | `npm run build`     | Transpiles TS into JS                            |
-| Run                  | `npm run start`     | Runs the compiled JS                             |
-| Dev                  | `npm run dev`       | Runs the TypeScript code and watches for changes |
-| Debug                | `npm run dev:debug` | Same as Dev but also attaches the debugger       |
+| Action               | Command              | Description                                          |
+| -------------------- | -------------------- | ---------------------------------------------------- |
+| Install dependencies | `npm i`              | Installs the necessary dependencies                  |
+| Compile              | `npm run build`      | Transpiles TS into JS                                |
+| Compile (Production) | `npm run build:prod` | Transpiles TS into JS removing unnecessary artifacts |
+| Run                  | `npm run start`      | Runs the compiled JS                                 |
+| Dev                  | `npm run dev`        | Runs the TypeScript code and watches for changes     |
+| Debug                | `npm run dev:debug`  | Same as Dev but also attaches the debugger           |
 
 ## Testing
 

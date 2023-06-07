@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import app from './app';
+
+import app from './app.js';
 
 const server = app.listen(app.get('port'), () => {
   console.log(

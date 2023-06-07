@@ -5,9 +5,9 @@ import express, { NextFunction, Request, Response } from 'express';
 
 import sampleData from '../data/sample.json';
 
-import BaseController from './controllers/base.controller';
-import BaseRouter from './routes/base.route';
-import BaseService from './services/base.service';
+import BaseController from './controllers/base.controller.js';
+import BaseRouter from './routes/base.route.js';
+import BaseService from './services/base.service.js';
 
 dotenv.config();
 const app = express();
@@ -39,7 +39,7 @@ app.use((err: Error, req: Request, res: Response, _next: NextFunction) => {
 
   if (err instanceof SyntaxError) {
     res.status(400).json(returnedErrorMessage);
-    return
+    return;
   }
   res.status(500).json(returnedErrorMessage);
 });

@@ -1,4 +1,7 @@
 {
   "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "inlineSourceMap": false
+  },
   "exclude": ["test/**/*", "*.test.*", "jest.config.ts"]
 }

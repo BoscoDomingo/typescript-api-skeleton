@@ -1,7 +1,7 @@
 import { json, Router } from 'express';
 
-import BaseController from '../controllers/base.controller';
-import { checkJSON } from '../utils/middleware';
+import BaseController from '../controllers/base.controller.js';
+import { checkJSON } from '../utils/middleware.js';
 
 export default class BaseRouter {
   constructor(

@@ -1,8 +1,8 @@
 import { Router } from 'express';
 
-import BaseController from '../../src/controllers/base.controller';
-import BaseRouter from '../../src/routes/base.route';
-import { checkJSON } from '../../src/utils/middleware';
+import BaseController from '../../src/controllers/base.controller.js';
+import BaseRouter from '../../src/routes/base.route.js';
+import { checkJSON } from '../../src/utils/middleware.js';
 
 describe('BaseRouter', () => {
   let mockSampleController: jest.Mocked<BaseController>;

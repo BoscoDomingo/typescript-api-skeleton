@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
 
 import sampleData from '../../data/sample.json';
-import BaseController from '../../src/controllers/base.controller';
-import BaseService from '../../src/services/base.service';
+import BaseController from '../../src/controllers/base.controller.js';
+import BaseService from '../../src/services/base.service.js';
 
 jest.mock('../../src/services/base.service', () => {
   return jest.fn().mockImplementation(() => {

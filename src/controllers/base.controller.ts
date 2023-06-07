@@ -1,11 +1,11 @@
 import { NextFunction, Request, Response } from 'express';
 
-import BaseService from '../services/base.service';
+import BaseService from '../services/base.service.js';
 
 export default class BaseController {
   constructor(private readonly baseService: BaseService) {}
 
-  public getSampleData(req: Request, res: Response, next: NextFunction): void {
+  public getSampleData(_req: Request, res: Response, next: NextFunction): void {
     try {
       const sampleData = this.baseService.getSampleData();
       res.json(sampleData);

@@ -1,7 +1,7 @@
 import request from 'supertest';
 
 import sampleData from '../data/sample.json';
-import app from '../src/app';
+import app from '../src/app.js';
 
 describe('GET /', () => {
   it('should return 200 OK with the sample data', async () => {
