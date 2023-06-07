@@ -27,42 +27,31 @@ If these issues don't matter for your intended use, or you know how to fix them,
   - Accompanied by [Supertest](https://www.npmjs.com/package/supertest) to test API calls. Not needed if you do proper DI with something like [NestJS](https://nestjs.com/).
 - [GitHub Action workflows](https://github.com/features/actions) set up to run tests and formatting+linting on push
 
-## Running the app
+## Local dev
 
-```
-# install dependencies
-npm install
-
-# run in dev mode on port 3000 (or whichever you indicate in .env's `PORT`)
-npm run dev
-
-# generate production build
-npm run build
-
-# run generated content in dist folder on port 3000 (or whichever you indicate in .env's `PORT`)
-npm run start
-```
+| Action               | Command             | Description                                      |
+| -------------------- | ------------------- | ------------------------------------------------ |
+| Install dependencies | `npm i`             | Installs the necessary dependencies              |
+| Compile              | `npm run build`     | Transpiles TS into JS                            |
+| Run                  | `npm run start`     | Runs the compiled JS                             |
+| Dev                  | `npm run dev`       | Runs the TypeScript code and watches for changes |
+| Debug                | `npm run dev:debug` | Same as Dev but also attaches the debugger       |
 
 ## Testing
 
-### Jest with supertest
-
-```
-npm run test
-```
+### Jest
+| Action | Command        | Description        |
+| ------ | -------------- | ------------------ |
+| Test   | `npm run test` | Runs all the tests |
 
 ## Formatting
-```
-npm run format
-```
+| Action | Command          | Description                       |
+| ------ | ---------------- | --------------------------------- |
+| Format | `npm run format` | Ensures code follows style guides |
 
 
 ## Linting
-
-```
-# run linter
-npm run lint
-
-# fix lint issues
-npm run lint:fix
-```
+| Action     | Command            | Description                                    |
+| ---------- | ------------------ | ---------------------------------------------- |
+| Lint       | `npm run lint`     | Runs the linter and points out mistakes        |
+| Lint + Fix | `npm run lint:fix` | Same as above but fixing auto-fixable problems |
