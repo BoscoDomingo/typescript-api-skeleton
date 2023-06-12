@@ -7,3 +7,4 @@ node_modules
 # Ignore built ts files
 dist
 coverage
+.vscode/settings.json

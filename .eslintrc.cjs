@@ -218,7 +218,7 @@ module.exports = {
     '@typescript-eslint/sort-type-constituents': 'error',
     '@typescript-eslint/switch-exhaustiveness-check': 'warn',
     '@typescript-eslint/no-unsafe-assignment': 'warn',
-    '@typescript-eslint/restrict-template-expressions': 'warn',
+    '@typescript-eslint/restrict-template-expressions': ['warn', { allowNumber: true, allowBoolean: true, allowNullish: true }],
     'no-console': 'warn',
     'default-param-last': 'off',
     '@typescript-eslint/default-param-last': 'warn',
