@@ -1,6 +1,6 @@
 {
   "name": "typescript-api-skeleton",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "type": "module",
   "description": "A simple TypeScript skeleton for easy tasks. For anything more complex, a DDD structure is recommended.",
   "main": "./dist/src/main.js",
