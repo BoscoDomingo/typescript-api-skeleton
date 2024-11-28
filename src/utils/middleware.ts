@@ -11,7 +11,3 @@ export function checkJSON(
 	}
 	next();
 }
-
-module.exports = {
-	checkJSON,
-};

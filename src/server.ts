@@ -1,14 +1,52 @@
-/* eslint-disable no-console */
+import path from "node:path";
 
-import app from "./app.js";
+import dotenv from "dotenv";
+import express, {
+	type NextFunction,
+	type Request,
+	type Response,
+} from "express";
 
-const server = app.listen(app.get("port"), () => {
-	console.log(
-		`\tApp is running in http://localhost:${app.get("port")} in ${app.get(
-			"env",
-		)} mode`,
-	);
-	console.log("\tPress CTRL-C to stop\n");
+import sampleData from "../data/sample.json" with { type: "json" };
+
+import BaseController from "./controllers/base.controller.js";
+import BaseRouter from "./routes/base.route.js";
+import BaseService from "./services/base.service.js";
+
+dotenv.config();
+const app = express();
+
+app.set("port", process.env.PORT ?? 3000);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(
+	express.static(path.join(import.meta.url, "../public"), {
+		maxAge: 31557600000,
+	}),
+);
+
+// DI (Composition Root)
+const baseService = new BaseService(sampleData);
+const baseController = new BaseController(baseService);
+const baseRouter = new BaseRouter(baseController);
+
+app.use("/", baseRouter.configureRouter());
+
+app.use((err: Error, req: Request, res: Response, _next: NextFunction) => {
+	console.error(`Error in request: ${req.method} - ${req.url}\n`, err.stack);
+	const returnedErrorMessage = {
+		message:
+			process.env.NODE_ENV === "production"
+				? "Internal server error"
+				: err.message,
+	};
+
+	if (err instanceof SyntaxError) {
+		res.status(400).json(returnedErrorMessage);
+		return;
+	}
+	res.status(500).json(returnedErrorMessage);
 });
 
-export default server;
+export default app;
