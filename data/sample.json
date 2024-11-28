@@ -1,12 +1,10 @@
-{
-  "list": [
-    {
-      "id": "0",
-      "name": "This is a sample JSON file"
-    },
-    {
-      "id": "1",
-      "name": "This is a sample JSON file as well"
-    }
-  ]
-}
+[
+  {
+    "id": "0",
+    "name": "This is a sample JSON file"
+  },
+  {
+    "id": "1",
+    "name": "This is a sample JSON file as well"
+  }
+]

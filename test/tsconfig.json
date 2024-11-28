@@ -1,0 +1,17 @@
+// Used for QoL improvements in tests
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@src/*": [
+				"../src/*"
+			]
+		},
+		"noEmit": true,
+		"allowImportingTsExtensions": true
+	},
+	"include": [
+		"./**/*"
+	]
+}

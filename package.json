@@ -8,11 +8,11 @@
     "start": "node ./dist/src/main.js",
     "dev": "tsx ./src/main.ts",
     "dev:debug": "tsx --inspect ./src/main.ts",
-    "build": "tsc -p tsconfig.build.json",
-    "build:prod": "tsc -p tsconfig.build.prod.json",
+    "build": "tsc",
     "lint": "biome check",
     "format": "biome check --write",
-    "test": "jest --verbose --detectOpenHandles"
+    "test": "glob test/**/*.test.ts -c 'tsx --test'",
+    "test:debug": "glob test/**/*.test.ts -c 'tsx --test --inspect'"
   },
   "repository": {
     "type": "git",
@@ -39,8 +39,8 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.1",
     "@types/supertest": "^6.0.2",
+    "glob": "^11.0.0",
     "supertest": "^7.0.0",
-    "ts-jest": "^29.2.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }

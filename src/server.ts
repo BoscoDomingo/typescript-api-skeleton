@@ -9,9 +9,9 @@ import express, {
 
 import sampleData from "../data/sample.json" with { type: "json" };
 
-import BaseController from "./controllers/base.controller.js";
-import BaseRouter from "./routes/base.route.js";
-import BaseService from "./services/base.service.js";
+import { BaseController } from "./controllers/base.controller.js";
+import { BaseRouter } from "./routes/base.route.js";
+import { BaseService } from "./services/base.service.js";
 
 dotenv.config();
 const app = express();
@@ -34,19 +34,21 @@ const baseRouter = new BaseRouter(baseController);
 app.use("/", baseRouter.configureRouter());
 
 app.use((err: Error, req: Request, res: Response, _next: NextFunction) => {
-	console.error(`Error in request: ${req.method} - ${req.url}\n`, err.stack);
-	const returnedErrorMessage = {
-		message:
-			process.env.NODE_ENV === "production"
-				? "Internal server error"
-				: err.message,
-	};
+	console.error(
+		`Error in request: ${req.method} - ${req.url}\n`,
+		err.message,
+		err.stack,
+	);
 
 	if (err instanceof SyntaxError) {
-		res.status(400).json(returnedErrorMessage);
+		res.status(400).json({
+			message: "Bad Request",
+		});
 		return;
 	}
-	res.status(500).json(returnedErrorMessage);
+	res.status(500).json({
+		message: "Internal server error",
+	});
 });
 
 export default app;
