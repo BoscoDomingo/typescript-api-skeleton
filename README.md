@@ -18,42 +18,36 @@ If these issues don't matter for your intended use, or you know how to fix them,
   - [NestJS](https://nestjs.com/)
   - [InversifyJS](https://inversify.io/)
   - [Awilix](https://github.com/jeffijoe/awilix)
-- [TypeScript](https://www.typescriptlang.org/) (v5)
-  - Find other `tsconfig.json` options [here](https://github.com/tsconfig/bases#centralized-recommendations-for-tsconfig-bases)
-- [pnpm](https://pnpm.io/) for package management
-- [ts-node-dev](https://github.com/wclr/ts-node-dev)
   - If you prefer mocking dependencies (no DI) use [proxyquire](https://www.npmjs.com/package/proxyquire)
+- [TypeScript](https://www.typescriptlang.org/)
+  - Find other `tsconfig.json` options [here](https://github.com/tsconfig/bases#centralized-recommendations-for-tsconfig-bases)
+  - [tsx](https://tsx.is/) when running TS files directly
+- [pnpm](https://pnpm.io/) for package management
 - [Biome](https://biomejs.dev/) for formatting and linting.
-- [Jest](https://jestjs.io) (can be substituted with [`tap`](https://www.npmjs.com/package/tap))
-  - Accompanied by [Supertest](https://www.npmjs.com/package/supertest) to test API calls. Not needed if you do proper DI with something like [NestJS](https://nestjs.com/).
+- [Node Test Runner](https://nodejs.org/api/test.html) for testing.
+  - Accompanied by [Supertest](https://www.npmjs.com/package/supertest) to test API calls.
 - [GitHub Action workflows](https://github.com/features/actions) set up to run tests and formatting+linting on push
 
 ## Local dev
 
-| Action               | Command           | Description                                          |
-| -------------------- | ----------------- | ---------------------------------------------------- |
-| Install dependencies | `pnpm i`          | Installs the necessary dependencies                  |
-| Compile              | `pnpm build`      | Transpiles TS into JS                                |
-| Compile (Production) | `pnpm build:prod` | Transpiles TS into JS removing unnecessary artifacts |
-| Run                  | `pnpm start`      | Runs the compiled JS                                 |
-| Dev                  | `pnpm dev`        | Runs the TypeScript code and watches for changes     |
-| Debug                | `pnpm dev:debug`  | Same as Dev but also attaches the debugger           |
+| Action               | Command          | Description                                      |
+| -------------------- | ---------------- | ------------------------------------------------ |
+| Install dependencies | `pnpm i`         | Installs the necessary dependencies              |
+| Compile              | `pnpm build`     | Transpiles TS into JS                            |
+| Run                  | `pnpm start`     | Runs the compiled JS                             |
+| Dev                  | `pnpm dev`       | Runs the TypeScript code and watches for changes |
+| Debug                | `pnpm dev:debug` | Same as Dev but also attaches the debugger       |
 
 ## Testing
 
-### Jest
-| Action | Command     | Description        |
-| ------ | ----------- | ------------------ |
-| Test   | `pnpm test` | Runs all the tests |
+### Node Test Runner
+| Action | Command           | Description                                   |
+| ------ | ----------------- | --------------------------------------------- |
+| Test   | `pnpm test`       | Runs all the tests                            |
+| Test   | `pnpm test:debug` | Runs all the tests with the debugger attached |
 
 ## Formatting
-| Action | Command       | Description                       |
-| ------ | ------------- | --------------------------------- |
-| Format | `pnpm format` | Ensures code follows style guides |
-
-
-## Linting
-| Action     | Command         | Description                                    |
-| ---------- | --------------- | ---------------------------------------------- |
-| Lint       | `pnpm lint`     | Runs the linter and points out mistakes        |
-| Lint + Fix | `pnpm lint:fix` | Same as above but fixing auto-fixable problems |
+| Action | Command       | Description                             |
+| ------ | ------------- | --------------------------------------- |
+| Lint   | `pnpm lint`   | Runs the linter and points out mistakes |
+| Format | `pnpm format` | Ensures code follows style guides       |
