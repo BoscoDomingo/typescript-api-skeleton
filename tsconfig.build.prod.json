@@ -3,5 +3,9 @@
   "compilerOptions": {
     "inlineSourceMap": false
   },
-  "exclude": ["test/**/*", "*.test.*", "jest.config.ts"]
+  "exclude": [
+    "test/**/*",
+    "*.test.*",
+    "jest.config.ts"
+  ]
 }

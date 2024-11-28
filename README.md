@@ -23,12 +23,7 @@ If these issues don't matter for your intended use, or you know how to fix them,
 - [pnpm](https://pnpm.io/) for package management
 - [ts-node-dev](https://github.com/wclr/ts-node-dev)
   - If you prefer mocking dependencies (no DI) use [proxyquire](https://www.npmjs.com/package/proxyquire)
-- [Prettier](https://prettier.io/)
-- [ESLint](https://eslint.org/) with:
-  - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) to make Prettier and ESLint play nice together.
-  - [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import) to allow for sorting the imports automatically.
-  - [typescript-eslint](https://typescript-eslint.io/) for TS-specific rules
-  - [Jest plugin](https://www.npmjs.com/package/eslint-plugin-jest) for Jest-specific rules
+- [Biome](https://biomejs.dev/) for formatting and linting.
 - [Jest](https://jestjs.io) (can be substituted with [`tap`](https://www.npmjs.com/package/tap))
   - Accompanied by [Supertest](https://www.npmjs.com/package/supertest) to test API calls. Not needed if you do proper DI with something like [NestJS](https://nestjs.com/).
 - [GitHub Action workflows](https://github.com/features/actions) set up to run tests and formatting+linting on push

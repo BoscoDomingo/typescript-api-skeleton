@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
 
-import app from './app.js';
+import app from "./app.js";
 
-const server = app.listen(app.get('port'), () => {
-  console.log(
-    `\tApp is running in http://localhost:${app.get('port')} in ${app.get(
-      'env',
-    )} mode`,
-  );
-  console.log('\tPress CTRL-C to stop\n');
+const server = app.listen(app.get("port"), () => {
+	console.log(
+		`\tApp is running in http://localhost:${app.get("port")} in ${app.get(
+			"env",
+		)} mode`,
+	);
+	console.log("\tPress CTRL-C to stop\n");
 });
 
 export default server;
